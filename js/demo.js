@@ -104,7 +104,7 @@
             const render = () => {
                 if ( activeTilt.columns ) {
                     translationVals.tx = MathUtils.lerp(translationVals.tx, MathUtils.lineEq(-randX, randX, winsize.width, 0, mousepos.x), 0.03);
-                    translationVals.ty = MathUtils.lerp(translationVals.ty, MathUtils.lineEq(-rY1, rY2, winsize.height, 0, mousepos.y), 0.03);
+                    translationVals.ty = MathUtils.lerp(translationVals.ty, MathUtils.lineEq(this.isBottom ? -rY1 : rY2, this.isBottom ? rY2 : -rY1, winsize.height, 0, mousepos.y), 0.03);
                     TweenMax.set(this.DOM.el, {
                         x: translationVals.tx, 
                         y: translationVals.ty,
